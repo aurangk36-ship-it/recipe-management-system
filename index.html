@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍳 Recipe Management System</h1>
+  </header>
+
+  <main>
+    
+    <section class="card">
+      <h2 id="formTitle">Add New Recipe</h2>
+      <form id="recipeForm" novalidate>
+        <input type="hidden" id="recipeId">
+
+        <label for="title">Title *</label>
+        <input type="text" id="title" placeholder="e.g. Pancakes">
+        <small class="error" id="titleError"></small>
+
+        <label for="ingredients">Ingredients * (one per line)</label>
+        <textarea id="ingredients" rows="4" placeholder="2 eggs&#10;1 cup flour"></textarea>
+        <small class="error" id="ingredientsError"></small>
+
+        <label for="instructions">Instructions *</label>
+        <textarea id="instructions" rows="4" placeholder="Mix everything and cook..."></textarea>
+        <small class="error" id="instructionsError"></small>
+
+        <label for="image">Image (optional, max 500KB)</label>
+        <input type="file" id="image" accept="image/*">
+        <small class="error" id="imageError"></small>
+
+        <div class="buttons">
+          <button type="submit" id="submitBtn">Add Recipe</button>
+          <button type="button" id="cancelBtn" class="gray" style="display:none;">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+
+    <section>
+      <h2>My Recipes</h2>
+      <input type="text" id="search" placeholder="🔍 Search by title or ingredient...">
+      <div id="recipeList"></div>
+    </section>
+  </main>
+
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="closeModal" class="close">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
